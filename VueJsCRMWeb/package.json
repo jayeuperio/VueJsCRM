@@ -19,6 +19,7 @@
     "event-source-polyfill": "0.0.12",
     "flag-icon-css": "2.9.0",
     "font-awesome": "^4.7.0",
+    "jwt-decode": "^2.2.0",
     "loader-utils": "^1.1.0",
     "minimist": "^1.2.0",
     "node-fetch": "^2.1.1",

@@ -1,4 +1,4 @@
-import AuthStore from '../store/Auth';
+import AuthStorage from '../store/AuthStorage';
 
 export interface IErrorContent {
     error: string;
@@ -42,7 +42,7 @@ export default class RestUtilities {
         let isBadRequest = false;
         let body = data == '' ? null : data;
         let headers: { [key: string]: string } = {
-            'Authorization': `Bearer ${AuthStore.getToken()}`,
+            'Authorization': `Bearer ${AuthStorage.getToken()}`,
             'Accept': 'application/json'
         };
 
@@ -62,7 +62,7 @@ export default class RestUtilities {
         }).then((response) => {
             if (response.status == 401) {
                 // Unauthorized; redirect to sign-in
-                AuthStore.removeToken();
+                AuthStorage.removeToken();
                 window.location.replace(`/?expired=1`);
             }
 

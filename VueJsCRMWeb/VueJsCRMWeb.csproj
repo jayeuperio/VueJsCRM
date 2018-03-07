@@ -8,11 +8,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\models\auth\authresult.ts" />
+    <None Remove="ClientApp\models\auth\index.ts" />
+    <None Remove="ClientApp\models\auth\jwtmodel.ts" />
+    <None Remove="ClientApp\models\auth\registermodel.ts" />
+    <None Remove="ClientApp\models\users\index.ts" />
+    <None Remove="ClientApp\models\users\userviewmodel.ts" />
+    <None Remove="ClientApp\services\authservice.ts" />
+    <None Remove="ClientApp\services\storecommon.ts" />
+    <None Remove="ClientApp\store\actions.ts" />
+    <None Remove="ClientApp\store\index.ts" />
+    <None Remove="ClientApp\store\mutations.ts" />
+    <None Remove="ClientApp\store\state.ts" />
+    <None Remove="ClientApp\utility\token-helper.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\models\auth\authresult.ts" />
+    <TypeScriptCompile Include="ClientApp\models\auth\index.ts" />
+    <TypeScriptCompile Include="ClientApp\models\auth\jwtmodel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\users\index.ts" />
+    <TypeScriptCompile Include="ClientApp\models\users\userviewmodel.ts" />
+    <TypeScriptCompile Include="ClientApp\services\authservice.ts" />
+    <TypeScriptCompile Include="ClientApp\services\storecommon.ts" />
+    <TypeScriptCompile Include="ClientApp\store\actions.ts" />
+    <TypeScriptCompile Include="ClientApp\store\index.ts" />
+    <TypeScriptCompile Include="ClientApp\store\mutations.ts" />
+    <TypeScriptCompile Include="ClientApp\store\state.ts" />
+    <TypeScriptCompile Include="ClientApp\utility\token-helper.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

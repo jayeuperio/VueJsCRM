@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
 // Containers
 import Full from '@/containers/Full.vue'
@@ -8,9 +8,9 @@ import Full from '@/containers/Full.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Login from '@/views/pages/Login.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
     mode: 'history',
     linkActiveClass: 'open active',
     scrollBehavior: () => {

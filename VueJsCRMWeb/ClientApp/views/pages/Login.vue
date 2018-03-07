@@ -18,7 +18,7 @@
                 </b-input-group>
                 <b-row>
                   <b-col cols="6">
-                    <b-button variant="primary" class="px-4">Login</b-button>
+                    <b-button variant="primary" @click="login()" class="px-4">Login</b-button>
                   </b-col>
                   <b-col cols="6" class="text-right">
                     <b-button variant="link" class="px-0">Forgot password?</b-button>
@@ -45,11 +45,31 @@
 <script lang="ts">
     import Vue from 'vue';
     import { Component } from 'vue-property-decorator';
-    import { ILoginCredentials } from '../../models/auth/logincredentials';
+    import { ILoginCredentials, IAuthResult } from '../../models/auth';
+    import { authService } from '../../services/authservice';
 
     @Component
     export default class Login extends Vue {
         name: 'Login';
-        credentials: ILoginCredentials = { userName: 'jay', password: 'ninjas', rememberMe: false }
+        credentials: ILoginCredentials = { userName: '', password: '', rememberMe: false };
+
+        login() {
+            authService.login(this.credentials).then(response => {
+
+                console.log(response);
+
+                if (!response.is_error) {
+                    var result = response.content as IAuthResult;
+
+                    console.log(result);
+
+                    this.$store.dispatch('logIn', result.token);
+                }
+            });
+        }
+
+        register() {
+
+        }
     }
 </script>
