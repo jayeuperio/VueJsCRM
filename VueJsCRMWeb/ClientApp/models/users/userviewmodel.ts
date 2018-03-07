@@ -7,4 +7,6 @@
     gender: number;
     authenticated: boolean;
     roles: string[];
+    sessExp?: Date;
+    position?: string;
 }

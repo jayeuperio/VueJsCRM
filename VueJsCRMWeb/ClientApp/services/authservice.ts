@@ -1,6 +1,6 @@
 ﻿import RestUtilities from './restutilities';
 import { ILoginCredentials, IAuthResult } from '../models/auth';
-import { ApiBaseList } from './storecommon';
+import { ApiBaseList } from './serviceCommon';
 
 class AuthService {
 
@@ -12,6 +12,9 @@ class AuthService {
         return RestUtilities.post(`${ApiBaseList.Auth}/logout`, userName);
     }
 
+    test() {
+        return RestUtilities.get(`${ApiBaseList.Auth}/GetAuthorize`);
+    }
 }
 
 export const authService = new AuthService();

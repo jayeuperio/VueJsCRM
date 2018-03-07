@@ -45,7 +45,8 @@ export default class RestUtilities {
             'Authorization': `Bearer ${AuthStorage.getToken()}`,
             'Accept': 'application/json'
         };
-
+        console.log('Headers');
+        console.log(headers);
         if (data) {
             if ((typeof data === 'object')) {
                 headers['Content-Type'] = 'application/json';

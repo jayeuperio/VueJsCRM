@@ -29,11 +29,11 @@ export default new VueRouter({
                 from: Route,
                 next: (to?: RawLocation | false | ((vm: Vue) => any) | void) => void
             ) => {
-                console.log(store.state);
+                console.log(store.state.loggedIn);
                 if (!store.state.loggedIn) {
                     next({
                         path: '/auth/login',
-                        query: { rediret: to.path }
+                        query: { redirect: to.path }
                     });
                 }
                 else {
@@ -52,7 +52,21 @@ export default new VueRouter({
         {
             path: '/auth/login',
             name: 'Login',
-            component: Login
+            component: Login,
+            beforeEnter: (
+                to: Route,
+                from: Route,
+                next: (to?: RawLocation | false | ((vm: Vue) => any) | void) => void
+            ) => {
+                if (store.state.loggedIn) {
+                    next({
+                        path: '/',
+                    });
+                }
+                else {
+                    next();
+                }
+            }
         },
         {
             path: '/auth/register',

@@ -13,9 +13,10 @@ export const actions = {
 
         var userData = TokenHelper.parseUserToken(token);
 
-        if (userData.authenticated) {
-            commit.commit('loggedIn', userData);
-        }
+        commit.state.currentUser = userData;
+        commit.state.loggedIn = userData.authenticated;
+
+        console.log(commit.state);
     },
     logIn(commit: ActionContext<any, IUserViewModel>, data: string) {
 

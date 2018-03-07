@@ -15,7 +15,8 @@
     <None Remove="ClientApp\models\users\index.ts" />
     <None Remove="ClientApp\models\users\userviewmodel.ts" />
     <None Remove="ClientApp\services\authservice.ts" />
-    <None Remove="ClientApp\services\storecommon.ts" />
+    <None Remove="ClientApp\services\commonservice.ts" />
+    <None Remove="ClientApp\services\serviceCommon.ts" />
     <None Remove="ClientApp\store\actions.ts" />
     <None Remove="ClientApp\store\index.ts" />
     <None Remove="ClientApp\store\mutations.ts" />
@@ -38,7 +39,8 @@
     <TypeScriptCompile Include="ClientApp\models\users\index.ts" />
     <TypeScriptCompile Include="ClientApp\models\users\userviewmodel.ts" />
     <TypeScriptCompile Include="ClientApp\services\authservice.ts" />
-    <TypeScriptCompile Include="ClientApp\services\storecommon.ts" />
+    <TypeScriptCompile Include="ClientApp\services\commonservice.ts" />
+    <TypeScriptCompile Include="ClientApp\services\servicecommon.ts" />
     <TypeScriptCompile Include="ClientApp\store\actions.ts" />
     <TypeScriptCompile Include="ClientApp\store\index.ts" />
     <TypeScriptCompile Include="ClientApp\store\mutations.ts" />

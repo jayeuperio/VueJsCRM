@@ -10,6 +10,8 @@ Vue.use(BootstrapVue)
 // Sync Store and router properties
 sync(store, router);
 
+store.dispatch('checkedLoggedIn');
+
 new Vue({
   el: '#app',
   router,
@@ -20,4 +22,3 @@ new Vue({
   }
 })
 
-store.dispatch('checkedLoggedIn');
