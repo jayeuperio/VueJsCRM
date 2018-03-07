@@ -17,12 +17,13 @@ export const actions = {
             commit.commit('loggedIn', userData);
         }
     },
-    logIn(commit: ActionContext<any, any>, data: string) {
+    logIn(commit: ActionContext<any, IUserViewModel>, data: string) {
 
-        console.log(data);
         var tokenData = TokenHelper.parseUserToken(data);
-
-        console.log(tokenData);
+        AuthStorage.setToken(data);
+        if (tokenData.authenticated) {
+            commit.commit('loggedIn', tokenData);
+        }
 
         return;
     }

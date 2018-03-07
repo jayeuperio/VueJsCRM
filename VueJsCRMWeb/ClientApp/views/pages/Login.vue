@@ -31,7 +31,7 @@
                 <div>
                   <h2>Sign up</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <b-button variant="primary" class="active mt-3">Register Now!</b-button>
+                  <b-button variant="primary" @click="register()" class="active mt-3">Register Now!</b-button>
                 </div>
               </b-card-body>
             </b-card>
@@ -56,12 +56,10 @@
         login() {
             authService.login(this.credentials).then(response => {
 
-                console.log(response);
 
                 if (!response.is_error) {
                     var result = response.content as IAuthResult;
 
-                    console.log(result);
 
                     this.$store.dispatch('logIn', result.token);
                 }
@@ -69,7 +67,7 @@
         }
 
         register() {
-
+            this.$router.push('/auth/register');
         }
     }
 </script>

@@ -10,7 +10,9 @@ export class TokenHelper {
         if (token) {
             let decodedToken: IJwtToken = jwtDecode(token);
 
-            user.authenticated = true;
+            console.log(decodedToken.exp);
+            console.log(Date.now());
+            user.authenticated = decodedToken.exp * 1000 > Date.now();
         }
 
         return user;
